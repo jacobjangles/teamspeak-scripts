@@ -26,3 +26,5 @@ firewall-cmd --zone=public --add-port=30033/tcp
 printf "${outmagenta}Allowing 10011/tcp...\n${outdefault}"
 firewall-cmd --zone=public --add-port=10011/tcp
 printf "${outmagenta}Done.\n${outdefault}"
+printf "${outmagenta}Here's the current FirewallD config:\n${outdefault}"
+firewall-cmd --list-all

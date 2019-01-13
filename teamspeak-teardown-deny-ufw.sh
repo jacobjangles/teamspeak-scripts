@@ -23,3 +23,5 @@ ufw deny 10011/tcp
 
 printf "${outred}UFW is now denying on the listed ports. You can manually remove these entries by using 'ufw status numbered', and 'ufw delete \$number' on the desired rule.\n${outdefault}"
 printf "${outmagenta}Done.\n${outdefault}"
+printf "${outmagenta}Here's the current UFW config:\n${outdefault}"
+ufw status

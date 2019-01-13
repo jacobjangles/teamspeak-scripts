@@ -23,3 +23,5 @@ firewall-cmd --zone=public --remove-port=10011/tcp
 
 printf "${outred}FirewallD is now denying on the listed ports.\n${outdefault}"
 printf "${outmagenta}Done.\n${outdefault}"
+printf "${outmagenta}Here's the current FirewallD config:\n${outdefault}"
+firewall-cmd --list-all

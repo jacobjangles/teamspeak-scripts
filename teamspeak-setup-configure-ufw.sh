@@ -26,3 +26,5 @@ ufw allow 30033/tcp
 printf "${outmagenta}Allowing 10011/tcp (IPv4 and IPv6)...\n${outdefault}"
 ufw allow 10011/tcp
 printf "${outmagenta}Done.\n${outdefault}"
+printf "${outmagenta}Here's the current UFW config:\n${outdefault}"
+ufw status
