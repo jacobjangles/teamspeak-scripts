@@ -4,31 +4,25 @@
 ## Purge ##
 read -p "Requires root (Enter) - (^C to abort)"
 
-# Set variables
-installdir="/home/teamspeak"
-
-# Set output colours
-outdefault="\033[0m"
-outmagenta="\033[0;35m"
-outgreen="\033[0;32m"
-outred="\033[0;31m"
+# Load variables
+source config.sh
 
 # Show set variables
-printf "${outmagenta}-- Set Variables --\n${outdefault}"
-printf "${outgreen}Installation directory:${outdefault} $installdir\n"
+printf "-- Set Variables --\n"
+printf "${outmagenta}Installation directory:${outdefault} $installdir\n"
 
 # Remove TeamSpeak Service
-printf "${outmagenta}Stopping service...\n${outdefault}"
+printf "Stopping service...\n"
 systemctl stop teamspeak.service
-printf "${outmagenta}Disabling service...\n${outdefault}"
+printf "Disabling service...\n"
 systemctl disable teamspeak.service
 systemctl daemon-reload
-printf "${outmagenta}Removing Unit file...\n${outdefault}"
+printf "Removing Unit file...\n"
 rm /etc/systemd/system/teamspeak.service
 
 # Remove TeamSpeak installation files
-printf "${outmagenta}Removing existing installation...\n${outdefault}"
+printf "Removing existing installation...\n"
 rm -R $installdir/teamspeak-server-current/
 
 printf "${outred}Your firewall ports are still open, but your teamspeak files are gone. You should tidy up your firewall.\n${outdefault}"
-printf "${outmagenta}Done.\n${outdefault}"
+printf "${outgreen}Done.\n${outdefault}"

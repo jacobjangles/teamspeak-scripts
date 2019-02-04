@@ -4,23 +4,16 @@
 ## Configure Service ##
 read -p "Requires root (Enter) - (^C to abort)"
 
-# Set variables
-installdir="/home/teamspeak"
-installuser="teamspeak"
-installgroup="teamspeak"
-
-# Set output colours
-outdefault="\033[0m"
-outmagenta="\033[0;35m"
-outgreen="\033[0;32m"
+# Load variables
+source config.sh
 
 # Show set variables
-printf "${outmagenta}-- Set Variables --\n${outdefault}"
-printf "${outgreen}Installation directory:${outdefault} $installdir\n"
-printf "${outgreen}Installation user:${outdefault} $installuser\n"
-printf "${outgreen}Installation group:${outdefault} $installgroup\n"
+printf "-- Set Variables --\n"
+printf "${outmagenta}Installation directory:${outdefault} $installdir\n"
+printf "${outmagenta}Installation user:${outdefault} $installuser\n"
+printf "${outmagenta}Installation group:${outdefault} $installgroup\n"
 
-printf "${outmagenta}Creating TeamSpeak Unit file...\n${outdefault}"
+printf "Creating TeamSpeak Unit file...\n"
 cat >/etc/systemd/system/teamspeak.service <<EOL
 [Unit]
 Description=TeamSpeak3 Server Daemon
@@ -41,12 +34,12 @@ Restart=always
 WantedBy=multi-user.target
 EOL
 
-printf "${outmagenta}Setting permissions...\n${outdefault}"
+printf "Setting permissions...\n"
 chmod 644 /etc/systemd/system/teamspeak.service
 
-printf "${outmagenta}Enabling service...\n${outdefault}"
+printf "Enabling service...\n"
 systemctl daemon-reload
 systemctl enable teamspeak.service
 
-printf "${outgreen}systemctl start teamspeak.service${outdefault} to start the service\n"
-printf "${outmagenta}Done.\n${outdefault}"
+printf "${outred}systemctl start teamspeak.service${outdefault} to start the service\n"
+printf "${outgreen}Done.\n${outdefault}"
