@@ -11,6 +11,8 @@ source config.sh
 printf "-- Set Variables --\n"
 printf "${outmagenta}Installation directory:${outdefault} $installdir\n"
 
+read -p "Execute (Enter) - (^C to abort)"
+
 # Remove TeamSpeak Service
 printf "Stopping service...\n"
 systemctl stop teamspeak.service

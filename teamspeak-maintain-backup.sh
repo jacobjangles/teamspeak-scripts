@@ -15,6 +15,8 @@ printf "${outmagenta}Backup directory:${outdefault} $backupdir\n"
 printf "${outmagenta}Installation user:${outdefault} $installuser\n"
 printf "${outmagenta}Installation group:${outdefault} $installgroup\n"
 
+read -p "Execute (Enter) - (^C to abort)"
+
 # Take a clean backup of the teamspeak directory
 systemctl stop teamspeak
 sleep 1

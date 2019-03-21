@@ -13,6 +13,8 @@ printf "${outmagenta}Backup directory:${outdefault} $backupdir\n"
 printf "${outmagenta}Installation user:${outdefault} $installuser\n"
 printf "${outmagenta}Installation group:${outdefault} $installgroup\n"
 
+read -p "Execute (Enter) - (^C to abort)"
+
 # Restore files from a backup and set the user and group
 printf "\n"
 printf "Restoring and chowning the whitelist...\n"

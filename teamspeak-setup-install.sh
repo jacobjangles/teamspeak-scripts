@@ -13,6 +13,8 @@ printf "${outmagenta}Installation directory:${outdefault} $installdir\n"
 printf "${outmagenta}Installation user:${outdefault} $installuser\n"
 printf "${outmagenta}Installation group:${outdefault} $installgroup\n"
 
+read -p "Execute (Enter) - (^C to abort)"
+
 # Get and extract TeamSpeak
 printf "\n"
 printf "Downloading TeamSpeak...\n"

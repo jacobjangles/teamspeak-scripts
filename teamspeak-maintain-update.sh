@@ -1,7 +1,7 @@
 #!/bin/bash
 
-## TeamSpeak Update ##
-## Maintain ##
+## TeamSpeak Maintain ##
+## Update ##
 read -p "Requires root (Enter) - (^C to abort)"
 read -p "This will disrupt TeamSpeak (Enter) - (^C to abort)"
 read -p "Version changes might bork TeamSpeak (Enter) - (^C to abort)"
@@ -17,6 +17,8 @@ printf "${outmagenta}TeamSpeak version:${outdefault} $teamspeakversion\n"
 printf "${outmagenta}Installation directory:${outdefault} $installdir\n"
 printf "${outmagenta}Installation user:${outdefault} $installuser\n"
 printf "${outmagenta}Installation group:${outdefault} $installgroup\n"
+
+read -p "Execute (Enter) - (^C to abort)"
 
 # Get and extract TeamSpeak
 printf "\n"
