@@ -16,9 +16,9 @@ printf "${outmagenta}Installation user:${outdefault} $installuser\n"
 printf "${outmagenta}Installation group:${outdefault} $installgroup\n"
 
 # Take a clean backup of the teamspeak directory
-systemctl teamspeak stop
+systemctl stop teamspeak
 sleep 1
 cp -a $installdir/teamspeak-server-current "$backupdir/teamspeak-backup-$(date +"%Y-%m-%d")"
-systemctl teamspeak start
+systemctl start teamspeak
 
 printf "${outgreen}Done.\n${outdefault}"
