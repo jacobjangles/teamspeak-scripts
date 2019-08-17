@@ -23,7 +23,7 @@ read -p "Execute (Enter) - (^C to abort)"
 # Get and extract TeamSpeak
 printf "\n"
 printf "Downloading TeamSpeak...\n"
-wget -P $installdir/ "http://dl.4players.de/ts/releases/$teamspeakversion/teamspeak3-server_linux_amd64-$teamspeakversion.tar.bz2"
+wget -P $installdir/ "https://files.teamspeak-services.com/releases/server/$teamspeakversion/teamspeak3-server_linux_amd64-$teamspeakversion.tar.bz2"
 printf "Stopping TeamSpeak...\n"
 systemctl stop teamspeak
 sleep 1
