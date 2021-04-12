@@ -10,7 +10,7 @@ installuser="teamspeak"
 # Group which will own TeamSpeak directory and files
 installgroup="teamspeak"
 # Target TeamSpeak version
-teamspeakversion="3.12.1"
+teamspeakversion="3.13.3"
 # Backup directory
 backupdir="/home/teamspeak/backups"
 # Restoration target directory
