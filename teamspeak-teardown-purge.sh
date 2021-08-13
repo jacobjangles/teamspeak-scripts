@@ -10,6 +10,7 @@ source config.sh
 # Show set variables
 printf "-- Set Variables --\n"
 printf "${outmagenta}Installation directory:${outdefault} $installdir\n"
+printf "${outmagenta}Backup directory:${outdefault} $backupdir\n"
 
 read -p "Execute (Enter) - (^C to abort)"
 
