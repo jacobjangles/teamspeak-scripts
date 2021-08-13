@@ -12,9 +12,9 @@ installgroup="teamspeak"
 # Target TeamSpeak version
 teamspeakversion="3.13.6"
 # Backup directory
-backupdir="/home/teamspeak/backups"
+backupdir=$installdir"/backups"
 # Restoration target directory
-restoretarget="/home/teamspeak/backups/teamspeak-backup-2019-01-13"
+restoretarget=$backupdir"/teamspeak-backup-2021-08-13"
 
 ## Output Colours ##
 # Default terminal colour

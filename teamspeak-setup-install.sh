@@ -10,6 +10,7 @@ source config.sh
 printf "-- Set Variables --\n"
 printf "${outmagenta}TeamSpeak version:${outdefault} $teamspeakversion\n"
 printf "${outmagenta}Installation directory:${outdefault} $installdir\n"
+printf "${outmagenta}Backup directory:${outdefault} $backupdir\n"
 printf "${outmagenta}Installation user:${outdefault} $installuser\n"
 printf "${outmagenta}Installation group:${outdefault} $installgroup\n"
 
@@ -21,6 +22,7 @@ printf "Downloading TeamSpeak...\n"
 wget -P $installdir/ "https://files.teamspeak-services.com/releases/server/$teamspeakversion/teamspeak3-server_linux_amd64-$teamspeakversion.tar.bz2"
 printf "Extracting...\n"
 mkdir $installdir/teamspeak-server-current
+mkdir $backupdir
 tar xf $installdir/teamspeak3-server_linux_amd64-$teamspeakversion.tar.bz2 -C $installdir/teamspeak-server-current --strip-components 1
 
 # Accept TeamSpeak license
