@@ -24,7 +24,8 @@ rm /etc/systemd/system/teamspeak.service
 
 # Remove TeamSpeak installation files
 printf "Removing existing installation...\n"
-rm -R $installdir/teamspeak-server-current/
+rm -Rf $installdir/teamspeak-server-current/
+rm -Rf $backupdir/
 
 printf "${outred}Your firewall ports are still open, but your teamspeak files are gone. You should tidy up your firewall.\n${outdefault}"
 printf "${outgreen}Done.\n${outdefault}"
